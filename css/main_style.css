@@ -100,8 +100,8 @@ body.header-overlay-on .wsite-header-section:not(.wsite-section-bg-color):before
 .banner-wrap h2 {
     color: inherit;
     font-family: 'Birdseye', sans-serif;
-    font-size: 80px;
-    font-weight: 100;
+    font-size: 30px;
+    font-weight: 700;
     line-height: 1.15;
     margin: 15px auto;
 }
@@ -393,7 +393,7 @@ label.hamburger span:after {
  font[size="6"] { font-size: 140% !important; }
  font[size="7"] { font-size: 150% !important; }
  .wsite-section { height: auto !important; }
- .banner-wrap .banner h2 { font-size: 2.5em; }
+ .banner-wrap .banner h2 { font-size: 1.5em; }
  .imageGallery > div { width: 49.95% !important; }
  td.wsite-multicol-col { float: none; display: block; width: 100% !important; box-sizing: border-box; }
  #blogTable td { float: none; display: block; clear: both; width: 100%; margin: 0; padding: 0; }
