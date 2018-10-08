@@ -1,15 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <title>Doc</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>parallax</title>
+
 </head>
 <body>
-    <section>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .section-one{
+            position: relative;
+            height: 662px;
+            background: red url('img/kassa.jpg') no-repeat;
+            z-index: 9;
+        }
+        .section-two{
+            position: relative;
+            height: 662px;
+        }
+        .section-two::before{
+            content:'';
+            background: blue url('img/odek.jpg') no-repeat;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+        }
+        .section-three{
+            position: relative;
+            height: 662px;
+            background: green url('img/top.jpg') no-repeat;
+        }
+    </style>
 
-
-    </section>
-
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <section class="section-one"></section>
+    <section class="section-two"></section>
+    <section class="section-three"></section>
+asd
 </body>
 </html>
