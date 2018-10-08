@@ -13,32 +13,31 @@
         .section-one{
             position: relative;
             height: 662px;
+            background: white url('/img/kassa.jpg') no-repeat;
+            z-index: 9;
         }
-        .section-one::before{
+        .section-two{
+            position: relative;
+            height: 662px;
+        }
+        .section-two::before{
             content:'';
-            background: blue url('img/kassa.jpg') no-repeat;
+            background: blue url('/img/odek.jpg') no-repeat;
             position: fixed;
             top: 0;
             left: 0;
             height: 100%;
             width: 100%;
         }
-        .section-two{
-            position: relative;
-            height: 662px;
-            background: blue url('img/odek.jpg') no-repeat;
-            z-index: 9;
-        }
         .section-three{
             position: relative;
             height: 662px;
-            background: green url('img/top.jpg') no-repeat;
+            background: green url('/img/top.jpg') no-repeat;
         }
     </style>
 
     <section class="section-one"></section>
     <section class="section-two"></section>
     <section class="section-three"></section>
-asd
 </body>
 </html>
