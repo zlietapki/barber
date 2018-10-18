@@ -16,18 +16,18 @@
             this.options = $.extend( $.fn.rellax.defaults, options );
             this.$parent = this.$el.parent().closest( this.options.container );
             this.parent = this.$parent.data( "plugin_" + Rellax );
-
             var $el = this.$el,
                 amount = $el.data( 'rellax-amount' ),
                 bleed = $el.data( 'rellax-bleed' ),
                 fill = $el.data( 'rellax-fill' ),
-                scale = $el.data( 'rellax-scale' );
+                scale = $el.data( 'rellax-scale' ),
+                wrapper = this.$parent.context.parentNode;
 
             this.options.amount = amount !== undefined ? parseFloat( amount ) : this.options.amount;
             this.options.bleed = bleed !== undefined ? parseFloat( bleed ) : this.options.bleed;
             this.options.scale = scale !== undefined ? parseFloat( scale ) : this.options.scale;
             this.options.fill = fill !== undefined;
-
+            this.wrapperHeight = wrapper.clientHeight;
             if ( this.options.amount == 0 ) {
                 return;
             }
@@ -41,9 +41,8 @@
                 this.$el.removeAttr( 'style' );
 
                 this.offset = this.$el.offset();
-                this.height = this.$el.outerHeight();
+                this.height = this.wrapperHeight || this.$el.outerHeight();
                 this.width = this.$el.outerWidth();
-
                 if ( this.parent === undefined ) {
                     this.offset.top -= this.options.bleed;
                     this.height += 2 * this.options.bleed;
@@ -57,7 +56,7 @@
                     scale = Math.max(scaleX, scaleY);
 
                 this.width = this.width * scale;
-                this.height = this.height * scale;
+                this.height = (this.wrapperHeight || this.height) * scale;
 
                 this.offset.top = ( parentHeight - this.height ) / 2;
                 this.offset.left = ( parentWidth - this.width ) / 2;
@@ -84,6 +83,7 @@
                 }
             },
             _setParentHeight: function() {
+                return;
                 if ( this.parent == undefined ) {
                     var $parent = this.$el.parent(),
                         parentHeight = $parent.css( 'minHeight', '' ).outerHeight();
