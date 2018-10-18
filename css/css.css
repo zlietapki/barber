@@ -212,3 +212,14 @@
   color: white;
   padding: 120px 100px;
 }
+
+#schedule h2 {
+  color: white;
+}
+
+#schedule .paragraph {
+  font-weight: 700;
+  color: white;
+  background-color: rgba(0, 0, 0, .5);
+  padding: 10px;
+}
