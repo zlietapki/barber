@@ -27,6 +27,7 @@
             this.options.bleed = bleed !== undefined ? parseFloat( bleed ) : this.options.bleed;
             this.options.scale = scale !== undefined ? parseFloat( scale ) : this.options.scale;
             this.options.fill = fill !== undefined;
+            this.wrapper = this.$parent.context.parentNode;
             this.wrapperHeight = wrapper.clientHeight;
             if ( this.options.amount == 0 ) {
                 return;
@@ -56,9 +57,8 @@
                     scale = Math.max(scaleX, scaleY);
 
                 this.width = this.width * scale;
-                this.height = (this.wrapperHeight || this.height) * scale;
-
-                this.offset.top = ( parentHeight - this.height ) / 2;
+                this.height =  this.height * scale;
+                this.offset.top =  this.height / 2;
                 this.offset.left = ( parentWidth - this.width ) / 2;
             },
             _prepareElement: function() {
@@ -69,36 +69,33 @@
                         top: this.offset.top,
                         left: this.offset.left,
                         width: this.width,
-                        height: this.height
+                        height: this.wrapper.clientHeight || this.height
                     });
                 } else {
                     this._scaleElement();
                     this.$el.css({
                         position: 'absolute',
-                        top: this.offset.top,
+                        top:  0,
                         left: this.offset.left,
                         width: this.width,
-                        height: this.height
+                        height: Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
                     });
                 }
             },
             _setParentHeight: function() {
-                return;
                 if ( this.parent == undefined ) {
                     var $parent = this.$el.parent(),
-                        parentHeight = $parent.css( 'minHeight', '' ).outerHeight();
-
+                        parentHeight = $parent.css( 'height', '' ).outerHeight();
                     parentHeight = windowHeight < parentHeight ? windowHeight : parentHeight;
-                    $parent.css( 'minHeight', parentHeight );
+                    $parent.css( 'height', parentHeight );
                 }
             },
             _updatePosition: function( forced ) {
                 var progress = this._getProgress(),
-                    height = this.parent !== undefined ? this.parent.height : this.height,
+                    height = this.parent !== undefined ? this.wrapper.clientHeight || this.parent.height : this.height,
                     move = ( windowHeight + height ) * ( progress - 0.5 ) * this.options.amount,
                     scale = 1 + ( this.options.scale - 1 ) * progress,
                     scaleTransform = scale >= 1 ? 'scale(' + scale + ')' : '';
-
                 if ( this.parent === undefined && this.$parent.length ) {
                     move *= -1;
                 }
@@ -113,7 +110,7 @@
                 this.$el.data( 'progress', progress );
 
                 if ( this.$el.is( this.options.container ) ) {
-                    this.$el.css( 'transform', 'translate3d(0,' + ( - lastScrollY ) + 'px,0)' );
+                   this.$el.css( 'transform', 'translate3d(0,' + ( - lastScrollY ) + 'px,0)' );
                 } else {
                     this.$el.css( 'transform', 'translate3d(0,' + move + 'px,0) ' + scaleTransform );
                 }
