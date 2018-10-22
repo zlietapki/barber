@@ -78,7 +78,7 @@
                         top:  0,
                         left: this.offset.left,
                         width: this.width,
-                        height: Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
+                        height: Math.max(document.documentElement.clientHeight, window.innerHeight, this.height, this.wrapper.clientHeight || 0)
                     });
                 }
             },
@@ -86,7 +86,7 @@
                 if ( this.parent == undefined ) {
                     var $parent = this.$el.parent(),
                         parentHeight = $parent.css( 'height', '' ).outerHeight();
-                    parentHeight = windowHeight < parentHeight ? windowHeight : parentHeight;
+                    parentHeight = parentHeight;
                     $parent.css( 'height', parentHeight );
                 }
             },
@@ -96,10 +96,9 @@
                     move = ( windowHeight + height ) * ( progress - 0.5 ) * this.options.amount,
                     scale = 1 + ( this.options.scale - 1 ) * progress,
                     scaleTransform = scale >= 1 ? 'scale(' + scale + ')' : '';
-                if ( this.parent === undefined && this.$parent.length ) {
+                if (this.$el.data().rellaxFirst === '') {
                     move *= -1;
                 }
-
                 if ( forced !== true && ( progress < 0 || progress > 1 ) ) {
                     this.$el.addClass( 'rellax-hidden' );
                     return;
