@@ -97,7 +97,7 @@
                     scale = 1 + ( this.options.scale - 1 ) * progress,
                     scaleTransform = scale >= 1 ? 'scale(' + scale + ')' : '';
                 if (this.$el.data().rellaxFirst === '') {
-                    move *= -1;
+                    move *= -0.65;
                 }
                 if ( forced !== true && ( progress < 0 || progress > 1 ) ) {
                     this.$el.addClass( 'rellax-hidden' );

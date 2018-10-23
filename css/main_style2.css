@@ -1743,3 +1743,6 @@ div.paragraph ul, div.paragraph ul li {
 div.paragraph ol, div.paragraph ol li {
     list-style: decimal outside !important;
 }
+.wrapper {
+    overflow: hidden;
+}
