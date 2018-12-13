@@ -4,6 +4,11 @@ ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, body, html, p, blockquote, fields
     font-family: 'Fahkwang', sans-serif;
 }
 
+#top_greet {
+    font-family: 'Charmonman', cursive;
+    font-size: 30px;
+}
+
 .wsite-form-field input[type='text'], .wsite-form-field input[type='email'], .wsite-form-field textarea, .wsite-form-field select, .wsite-form-field input[type='radio'], .wsite-form-field input[type='checkbox'], .wsite-com-product-option-groups input[type='text'], .wsite-com-product-option-groups input[type='email'], .wsite-com-product-option-groups textarea, .wsite-com-product-option-groups select, .wsite-com-product-option-groups input[type='radio'], .wsite-com-product-option-groups input[type='checkbox'] {
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
@@ -1743,6 +1748,7 @@ div.paragraph ul, div.paragraph ul li {
 div.paragraph ol, div.paragraph ol li {
     list-style: decimal outside !important;
 }
+
 .wrapper {
     overflow: hidden;
 }
