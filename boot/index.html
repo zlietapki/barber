@@ -19,33 +19,52 @@
 </head>
 
 <body>
-    <!-- <span>NYC BARBERSHOP MUSEUM</span> -->
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <style>
+        .jarallax {
+            position: relative;
+            z-index: 0;
+        }
+
+        .jarallax>.jarallax-img {
+            position: absolute;
+            object-fit: cover;
+            /* support for plugin https://github.com/bfred-it/object-fit-images */
+            font-family: 'object-fit: cover;';
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    </style>
+    <!-- <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
         <div class="container">
             <div class="navbar-nav">
                 <a class="nav-item nav-link active" href="#">Home</a>
-                <a class="nav-item nav-link" href="#">Services ssssssss</a>
+                <a class="nav-item nav-link" href="#">Services</a>
                 <a class="nav-item nav-link" href="#">Gift Certificates</a>
                 <a class="nav-item nav-link disabled" href="#">Contact</a>
             </div>
         </div>
-    </nav>
+    </nav> -->
 
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <nav class="nav nav-pills flex-sm-row flex-column">
-                    <a class="nav-item nav-link active" href="#">Home</a>
-                    <a class="nav-item nav-link" href="#">Services ssssssss</a>
-                    <a class="nav-item nav-link" href="#">Gift Certificates</a>
-                    <a class="nav-item nav-link disabled" href="#">Contact</a>
-                </nav>
+
+    <div class="jarallax" data-speed="0" style="height: 25vh; padding-top: 20px;">
+        <img class="jarallax-img" src="img/top3.jpg" alt="">
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div style="background-color: rgba(0, 0, 0, 0.3); ">
+                        <h1 class="header">290 Columbus Ave<br>New York<br><a style="color:inherit"
+                                href=" tel:+12129209716">+1 (212)
+                                920-9716​</a>
+                        </h1>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
 
-    <div class="jarallax" data-speed="0.2" style="height: 300px; background-image: url('img/top3.jpg');">
-        <h1 class="header">290 Columbus Ave<br>New York<br><a href=" tel:+12129209716">+1 (212) 920-9716​</a></h1>
+        </div>
     </div>
 
     <div class="container">
@@ -193,7 +212,7 @@
         </section>
     </div>
 
-    <div class="jarallax" data-speed="0.2" style="background-image: url('img/kassa.jpg');">
+    <div class="jarallax" data-speed="0" style="background-image: url('img/kassa.jpg');">
         <div class="container">
             <section class="content" id="schedule">
                 <h1>To schedule an appointment, please contact <a href="tel:+12129209716">+1 (212) 920-9716​</a></h1>
@@ -228,7 +247,7 @@
         </section>
     </div>
 
-    <div class="jarallax" data-speed="0.2" style="height: 500px; background-image: url('img/odek.jpg');"></div>
+    <div class="jarallax" data-speed="0" style="height: 500px; background-image: url('img/odek.jpg');"></div>
 
     <div class="container">
         <section class="content" id="contacts">
@@ -242,13 +261,17 @@
                 <li>Friday: 10 am - 7 pm</li>
                 <li>Saturday: 10 am - 6 pm</li>
                 <li>Sunday: 11am - 5 pm​</li>
-                <li>Contact us: <a href="welcome@nycbarbershopmuseum.com" target="_top">welcome@nycbarbershopmuseum.com</a></li>
+                <li>Contact us: <a href="welcome@nycbarbershopmuseum.com"
+                        target="_top">welcome@nycbarbershopmuseum.com</a></li>
             </ul>
             <div class="">
                 <ul class="socialIcons">
-                    <li class="facebook"><a href="https://www.facebook.com/NYCBarberMuseum/"><i class="fa fa-fw fa-facebook"></i>Facebook</a></li>
-                    <li class="instagram"><a href="https://instagram.com/nycbarbermuseum/"><i class="fa fa-fw fa-instagram"></i>Instagram</a></li>
-                    <li class="email"><a href="mailto:welcome@nycbarbershopmuseum.com"><i class="fa fa-fw fa-envelope"></i>Email</a></li>
+                    <li class="facebook"><a href="https://www.facebook.com/NYCBarberMuseum/"><i
+                                class="fa fa-fw fa-facebook"></i>Facebook</a></li>
+                    <li class="instagram"><a href="https://instagram.com/nycbarbermuseum/"><i
+                                class="fa fa-fw fa-instagram"></i>Instagram</a></li>
+                    <li class="email"><a href="mailto:welcome@nycbarbershopmuseum.com"><i
+                                class="fa fa-fw fa-envelope"></i>Email</a></li>
                 </ul>
             </div>
             <a class="first-child wsite-social-item wsite-social-mail" href="mailto:welcome@nycbarbershopmuseum.com"
@@ -263,11 +286,14 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
     <script type="text/javascript">
         jarallax(document.querySelectorAll('.jarallax'));
