@@ -1,25 +1,18 @@
 /* main */
 @import url('https://fonts.googleapis.com/css?family=Fahkwang');
 ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, body, html, p, blockquote, fieldset, input {
-    margin: 0;
-    padding: 0;
     font-family: 'Fahkwang', sans-serif;
 }
 body {
     background-color: #F5F3F1;
 }
-section {
-    margin-top: 40px;
-    margin-bottom: 40px;
-}
-.header {
-    padding: 50px 50px 30px 50px;
-    color: white;
+
+.bg-halfblack {
+    background-color: rgba(0, 0, 0, 0.3);
 }
 h1 {
     font-size: 24px;
     font-weight: 700;
-    margin-bottom: 30px;
 }
 h2 {
     color: rgb(164, 143, 122);
@@ -36,10 +29,6 @@ h3 {
 .li-header {
     margin-bottom: 6px;
 }
-.para-wrap {
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
 .devider::before {
     content: "";
     border-top: thin solid #a1a1a1;
@@ -54,25 +43,6 @@ h3 {
 .gift {
     display: block;
     margin-left: 1em;
-}
-section#schedule {
-    padding: 20px;
-}
-#schedule h1 {
-    color: white;
-}
-#schedule ul {
-    list-style-type: none;
-}
-#schedule .main-text {
-    font-weight: 700;
-    color: white;
-    background-color: rgba(0, 0, 0, .5);
-    padding: 10px;
-}
-/* end main */
-#services img {
-    margin-bottom: 20px;
 }
 
 /* social */
